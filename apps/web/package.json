@@ -1,0 +1,24 @@
+{
+  "name": "@pickle/web",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/ --ext .tsx,.ts --fix ",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@pickle/ui": "workspace:^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@pickle/config": "workspace:*",
+    "@pickle/tsconfig": "workspace:*",
+    "@vitejs/plugin-react": "^1.0.7",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}

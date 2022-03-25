@@ -1,0 +1,22 @@
+{
+  "name": "@pickle/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "dev": "node ./scripts/runDev.js",
+    "lint": "eslint src scripts --fix",
+    "build": "rm -rf dist && esbuild ./src/app.ts --bundle --outfile=./dist/out.js --platform=node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@pickle/config": "workspace:*",
+    "@pickle/tsconfig": "workspace:*"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

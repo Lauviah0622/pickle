@@ -1,0 +1,8 @@
+.eslintrc.js
+.prettierrc.js
+*.svg
+*.css
+*.config.js
+*.config.ts
+*.json
+./scripts/**/.js
