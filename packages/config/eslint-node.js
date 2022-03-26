@@ -4,25 +4,19 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['airbnb', 'plugin:import/recommended', 'prettier'],
+  extends: ['airbnb', 'prettier'],
   plugins: ['import'],
   settings: {
     'import/resolver': {
       node: {
         extensions: ['.js'],
-        paths: ['scripts'],
       },
     },
   },
   rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        packageDir: ['./', '../../'],
-      },
-    ],
+    'import/no-extraneous-dependencies': ['off', { devDependencies: true }],
     'comma-dangle': [0, 'only-multiline'],
-    'import/prefer-default-export': [1],
+    'import/prefer-default-export': [0],
   },
   overrides: [
     {

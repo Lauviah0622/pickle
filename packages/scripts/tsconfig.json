@@ -1,0 +1,8 @@
+{
+  "extends": "@pickle/tsconfig/node.json",
+  "include": ["./*.ts", "src/runDev.ts"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist"
+  }
+}

@@ -7,7 +7,6 @@ module.exports = {
     'eslint:recommended',
     'airbnb',
     'airbnb-typescript',
-    'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:react/jsx-runtime',
     'prettier',
@@ -32,7 +31,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/require-default-props': 'off',
     'no-restricted-exports': 'off',
-    'import/prefer-default-export': [1],
+    'import/prefer-default-export': [0],
   },
   overrides: [
     {

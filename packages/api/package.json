@@ -1,0 +1,20 @@
+{
+  "name": "@pickle/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "docs": "nodemon app.js -e yaml"
+  },
+  "type": "commonjs",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pickle/tsconfig": "workspace:*",
+    "swagger-ui-express": "^4.3.0",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@pickle/config": "workspace:*"
+  }
+}

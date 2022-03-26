@@ -6,3 +6,4 @@
 *.config.ts
 *.json
 ./scripts/**/.js
+dist

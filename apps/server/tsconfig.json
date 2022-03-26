@@ -1,8 +1,5 @@
 {
   "extends": "@pickle/tsconfig/node.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "dist"
-  }
+  "include": ["src", "scripts"],
+  "compilerOptions": {}
 }

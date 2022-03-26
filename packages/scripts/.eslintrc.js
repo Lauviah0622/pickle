@@ -1,6 +1,6 @@
 const { join } = require('path')
 
-console.log('server lint ', [__dirname, join(__dirname, '../../')])
+console.log('eslint', __dirname, join(__dirname, '../../'))
 
 module.exports = {
   ...require('@pickle/config/eslint-node.js'),
@@ -13,11 +13,9 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': [
-      0, // this rule make error lint in vscode extension
-      {
-        packageDir: [__dirname, join(__dirname, '../../')],
-      },
+      'off', // this rule make error lint in vscode extension
     ],
+    'import/prefer-default-export': [0],
   },
   ignorePatterns: [
     '.eslintrc.js',

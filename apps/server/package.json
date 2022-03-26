@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "dev": "node ./scripts/runDev.js",
+    "dev": "ts-node ./scripts/runDev.ts",
     "lint": "eslint src scripts --fix",
     "build": "rm -rf dist && esbuild ./src/app.ts --bundle --outfile=./dist/out.js --platform=node"
   },
@@ -17,6 +17,7 @@
     "@pickle/tsconfig": "workspace:*"
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "@pickle/scripts": "workspace:*",
+    "@types/express": "^4.17.13"
   }
 }
