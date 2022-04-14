@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("PICKLE_DEV_ADMIN")
+}
+
+model Event {
+  id Int @id @default(autoincrement())
+  title String @db.VarChar(256) @default("event")
+  period Int @default(60)
+  urlKey String @db.VarChar(16) @unique
+  expectedTimeStart DateTime @default(now())
+  expectedTimeEnd DateTime?
+  eventStart DateTime?
+  eventEnd DateTime?
+
+  sponsor Sponsor @relation(fields: [sponsorId], references: [id])
+  sponsorId Int
+
+  pollingPeriods PollingPeriod[]
+  attendees Attendee[]
+
+  
+}
+
+model Sponsor {
+  id Int @id @default(autoincrement())
+  name String @default("user")
+  events Event[]
+} 
+
+model PollingPeriod {
+  id Int @id @default(autoincrement())
+  start DateTime
+  end DateTime
+  
+  event Event @relation(fields: [eventId], references: [id])
+  eventId Int
+}
+
+model Attendee {
+  id Int @id @default(autoincrement())
+  name String @default("attendee")
+  event Event @relation(fields: [eventId], references: [id])
+  eventId Int
+
+  attendeePeriods AttedeePeriod[]
+}
+
+model AttedeePeriod {
+  id Int @id @default(autoincrement())
+  attendee Attendee @relation(fields: [attendeeId], references: [id])
+  attendeeId Int
+
+  start DateTime
+  end DateTime
+
+  @@unique([attendeeId,  end])
+  @@unique([attendeeId, start])
+}

@@ -7,17 +7,20 @@
     "test": "jest --coverage",
     "dev": "ts-node ./scripts/runDev.ts",
     "lint": "eslint src scripts --fix",
-    "build": "rm -rf dist && esbuild ./src/app.ts --bundle --outfile=./dist/out.js --platform=node"
+    "build": "rm -rf dist && esbuild ./src/app.ts --bundle --outfile=./dist/out.js --platform=node",
+    "prisma": "prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@pickle/config": "workspace:*",
-    "@pickle/tsconfig": "workspace:*"
+    "@pickle/tsconfig": "workspace:*",
+    "prisma": "^3.12.0"
   },
   "dependencies": {
     "@pickle/scripts": "workspace:*",
+    "@prisma/client": "^3.12.0",
     "@types/express": "^4.17.13"
   }
 }
