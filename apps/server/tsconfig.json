@@ -1,5 +1,12 @@
 {
-  "extends": "@pickle/tsconfig/node.json",
-  "include": ["src", "scripts"],
-  "compilerOptions": {}
+    "extends": "@pickle/tsconfig/node.json",
+    "include": ["src", "scripts"],
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
 }

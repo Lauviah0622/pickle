@@ -1,8 +1,9 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "sourceMap": true,
-    "target": "ES6"
-  }
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "sourceMap": true,
+        "target": "ES6"
+    }
 }
