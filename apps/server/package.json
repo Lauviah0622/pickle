@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "dev": "ts-node ./scripts/runDev.ts",
+    "dev": "pm2 start ecosystem.config.js",
+    "dev:stop": "pm2 delete all",
+    "monit": "pm2 monit",
     "lint": "eslint src scripts --fix",
     "build": "rm -rf dist && esbuild ./src/app.ts --bundle --outfile=./dist/out.js --platform=node",
     "prisma": "prisma"
