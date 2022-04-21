@@ -3,6 +3,7 @@ import { z } from 'zod'
 
 import createUrlKey from '@/utils/createUrlKey'
 import prisma from '@/utils/prisma'
+import { isNamedExportBindings } from 'typescript'
 
 const router = express.Router()
 
@@ -14,7 +15,6 @@ const eventBodySchema = z.object({
 })
 
 router
-
     .get('/id/:id', async (req, res) => {
         const { id } = req.params
         const data = await prisma.event.findUnique({
@@ -27,18 +27,21 @@ router
         })
         res.send(data)
     })
-    .get('/urlkey/:urlKey', async (req, res) => {
-        const { urlKey } = req.params
-        const data = await prisma.event.findUnique({
-            where: {
-                urlKey,
-            },
-            include: {
-                sponsor: true,
-            },
-        })
-        console.log(data)
-        res.send(data)
+    .get('/urlkey/:urlKey', async (req, res, next) => {
+            const { urlKey } = req.params
+            throw Error('')
+            
+            const data = await prisma.event.findUnique({
+                where: {
+                    urlKey,
+                },
+                include: {
+                    sponsor: true,
+                },
+            })
+            res.send(data)
+            throw Error('no-type')
+            next()
     })
     .post('/', async (req, res) => {
         try {
@@ -60,9 +63,10 @@ router
             res.send(req.body)
         } catch (err) {
             console.log(err)
-            res.status(400)
-            res.send('wrong format')
         }
     })
+// .put('/', async (req, res) => {
+//     try {}
+// })
 
 export default router
